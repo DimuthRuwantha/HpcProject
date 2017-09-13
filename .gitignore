@@ -1,0 +1,4 @@
+.sonar
+.idea
+cmake-build-debug
+sonar-project.properties
