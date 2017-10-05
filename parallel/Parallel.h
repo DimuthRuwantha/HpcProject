@@ -5,13 +5,14 @@
 #ifndef HPCPROJECT_PARALLEL_H
 #define HPCPROJECT_PARALLEL_H
 
+using namespace std;
 
 class Parallel {
 public:
     void runParallel();
 
 private:
-    std::ifstream inFile;
+    ifstream inFile;
 };
 
 

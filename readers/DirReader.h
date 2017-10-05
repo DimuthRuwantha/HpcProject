@@ -5,14 +5,19 @@
 #ifndef HPCPROJECT_DIR_READER_H
 #define HPCPROJECT_DIR_READER_H
 
-#include <string.h>
+#include <string>
 #include <iostream>
+#include <vector>
+
+using namespace std;
 
 class DirReader {
 
 public:
-    int dirReader(std::string path);
+    vector<string> dirReader(string);
 
+public:
+    vector<string> fileReader();
 };
 
 

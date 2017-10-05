@@ -4,16 +4,26 @@
 
 #include "Sequence.h"
 #include "../readers/FileReader.h"
+#include "../readers/DirReader.h"
 
-void Sequence::runSequence() {
+using namespace std;
+
+void Sequence::runSequence(vector<string> fileNames, string word) {
     FileReader fileReader;
+    DirReader dirReader;
 
-    std::cout << "Running Sequence" << std::endl;
+    cout << "Running Sequence" << endl;
+    clock_t start = clock();
+    for (int i = 0; i < fileNames.size(); ++i) {
 
-    /* TODO
-     * implement file reader in a for loop to read files one by one
-     */
-    fileReader.fileOpener();
-    fileReader.stringSearcher();
+        fileReader.stringSearcher(fileNames[i], word);
+
+    }
+
+    clock_t end = clock();
+    float duration = (float) (end - start) / CLOCKS_PER_SEC;
+
+    printf("time elapsed %f \n", duration);
+//    fileReader.fileOpener();
 
 }

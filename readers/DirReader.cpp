@@ -6,39 +6,60 @@
 #include <dirent.h>
 #include <bits/stdc++.h>
 
+using namespace std;
 
-int DirReader::dirReader(std::string path) {
+vector<string> DirReader::dirReader(string path) {
     DIR *dir;
 
     int i = 0;
-    std::string str;
-    std::array<std::string, 100> fileNames;
-    std::string sting[100];
+    string str;
+    vector<string> fileNames;
+//    std::string *sting;
+//    sting = new std::string[100];
 
     struct dirent *ent;
     if ((dir = opendir(path.c_str())) != NULL) {
         /* print all the files and directories within directory */
-        std::string pth = path;
+        string pth = path;
         pth = pth + "\\";
 
         while ((ent = readdir(dir)) != NULL) {
             if (ent->d_type == DT_REG) {
                 path = pth;
-                std::string file = ent->d_name;
+                string file = ent->d_name;
                 path = path + file;
-                sting[i] = path;
+//                sting[i] = path;
+                fileNames.push_back(path);
                 i++;
             }
         }
         closedir(dir);
 
-        printf("no of elements : %d \n", i);
-        printf("element2 : %s \n", sting[1].c_str());
-        std::cout << path << std::endl;
+        printf("No of files in the Directory : %d \n", i);
+//        printf("element2 : %s \n", sting[1].c_str());
+        cout << path << endl;
     } else {
         /* could not open directory */
-        perror("");
-        return EXIT_FAILURE;
+        perror("could not open directory");
+//        return EXIT_FAILURE;
     }
-    return 0;
+    return fileNames;
+}
+
+vector<string> DirReader::fileReader() {
+
+    vector<string> vt;
+
+    vt.push_back("sdjer");
+    vt.push_back("olpldk");
+    vt.push_back("jdkla");
+
+
+//    std::string *str;
+//    str = new std::string[50];
+//    str[0] = "ewr";
+//    str[1] = "efggr";
+//    str[2] = "egdee";
+
+    return vt;
 }

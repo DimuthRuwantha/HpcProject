@@ -2,9 +2,10 @@
 // Created by DimRu on 18-Aug-17.
 //
 #include <iostream>
-#include <fstream>
 #include "Parallel.h"
 
+using namespace std;
+
 void Parallel::runParallel() {
-    std::cout<<"Running parallel"<<std::endl;
+    cout << "Running parallel" << endl;
 }
