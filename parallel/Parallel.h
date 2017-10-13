@@ -11,8 +11,8 @@ class Parallel {
 public:
     void runParallel();
 
-private:
-    ifstream inFile;
+//private:
+//    ifstream inFile;
 };
 
 
