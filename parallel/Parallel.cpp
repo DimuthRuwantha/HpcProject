@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Parallel.h"
 
+
 using namespace std;
 
 void Parallel::runParallel() {
